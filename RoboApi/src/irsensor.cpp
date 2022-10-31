@@ -1,7 +1,5 @@
 #include "irsensor.h"
 
-RoboApi::IRSensor::IRSensor(int pin) : m_pin(pin){}
-
 bool RoboApi::IRSensor::isWhite()
 {
 	return value() < IR_THRESHOLD;

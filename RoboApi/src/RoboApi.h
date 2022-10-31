@@ -16,5 +16,6 @@
 
 #include <TimedObjectManager.h>
 #include <MotorGroup.h>
+#include <irsensor.h>
 #endif
 

@@ -11,6 +11,7 @@
 
 
 RoboApi::MotorGroup motor(RoboApi::MotorController(19,18),RoboApi::MotorController(3,2));
+RoboApi::IRSensor sensor(A0);
 void setup() {
 Serial.begin(9600);
 motor.vorwaerts(255,2000);
@@ -20,6 +21,5 @@ motor.vorwaerts(255,2000);
 // the loop function runs over and over again until power down or reset
 void loop() {
 RoboApi::TimedObjectManager::instance()->update();
- Serial.println(analogRead(A1));
- delay(200);
+Serial.println(sensor.isWhite() ? "weiﬂ" : "schwarz");
 }
