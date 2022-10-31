@@ -20,9 +20,9 @@
   </ItemGroup>
   <ItemGroup>
     <!-- <ClInclude Include="$(MSBuildThisFileDirectory)RoboApi.h" /> -->
-    <ClInclude Include="$(MSBuildThisFileDirectory)irsensor.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\Arrays.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\Debug.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\IRSensor.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\MotorController.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\MotorGroup.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\TimedObject.h" />
@@ -30,7 +30,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)src\Timer.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="$(MSBuildThisFileDirectory)irsensor.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\IRSensor.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)src\MotorController.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)src\MotorGroup.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)src\RoboApi.cpp" />

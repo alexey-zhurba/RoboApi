@@ -29,7 +29,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)src\MotorGroup.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)irsensor.cpp">
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\IRSensor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -62,7 +62,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)src\Debug.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)irsensor.h">
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\IRSensor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

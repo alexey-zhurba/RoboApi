@@ -1,6 +1,6 @@
 #pragma once
 #ifndef _IRSENSOR_h_
-#define _IRSENOR_h_
+#define _IRSENSOR_h_
 
 #if defined(ARDUINO) && ARDUINO >= 100
 #include "arduino.h"
@@ -10,7 +10,7 @@
 
 #define IR_THRESHOLD 20
 
-namespace RoboApi{
+namespace RoboApi {
 	class IRSensor {
 	private:
 		int m_pin;

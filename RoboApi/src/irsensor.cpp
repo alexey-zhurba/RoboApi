@@ -1,4 +1,6 @@
-#include "irsensor.h"
+#include "IRSensor.h"
+
+RoboApi::IRSensor::IRSensor(int pin) : m_pin(pin){}
 
 bool RoboApi::IRSensor::isWhite()
 {
