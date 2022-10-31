@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <ItemsProjectGuid>{954546ae-f7d3-4454-ab45-167e57d18d50}</ItemsProjectGuid>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="$(MSBuildThisFileDirectory)readme.txt" />
+    <Text Include="$(MSBuildThisFileDirectory)library.properties" />
+    <Text Include="$(MSBuildThisFileDirectory)src\RoboApi.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- <ClInclude Include="$(MSBuildThisFileDirectory)RoboApi.h" /> -->
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\Arrays.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\Debug.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\MotorController.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\MotorGroup.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\TimedObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\TimedObjectManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\Timer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\MotorController.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\MotorGroup.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\RoboApi.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\TimedObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\TimedObjectManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\Timer.cpp" />
+  </ItemGroup>
+</Project>
