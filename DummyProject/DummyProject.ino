@@ -20,5 +20,6 @@ motor.vorwaerts(255,2000);
 // the loop function runs over and over again until power down or reset
 void loop() {
 RoboApi::TimedObjectManager::instance()->update();
-  
+ Serial.println(analogRead(A1));
+ delay(200);
 }

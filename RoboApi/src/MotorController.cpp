@@ -7,7 +7,7 @@ void RoboApi::MotorController::vorwaertsInternal(int speed)
 	Serial.print("Speed: ");
 	Serial.println(speed);
 	digitalWrite(m_pinIA, LOW);
-	digitalWrite(m_pinIB, HIGH);
+	analogWrite(m_pinIB, speed);
 	PRINT_EXIT_FUNC();
 }
 
