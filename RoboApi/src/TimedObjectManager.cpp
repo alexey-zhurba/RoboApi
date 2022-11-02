@@ -31,7 +31,7 @@ void RoboApi::TimedObjectManager::remove(TimedObject* tObj)
 		if (m_tObjectStack[i] == tObj)
 		{
 			--m_stackPtr;
-			for (int j = i; j <= m_stackPtr; ++j)
+			for (int j = i; j < m_stackPtr; ++j)
 			{
 				m_tObjectStack[j] = m_tObjectStack[j + 1]; //Alle Elemente nach links einrücken
 			}
