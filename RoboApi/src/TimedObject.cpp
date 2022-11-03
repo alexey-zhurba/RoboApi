@@ -2,6 +2,12 @@
 
 RoboApi::TimedObject::TimedObject() : m_bStop(true) {};
 
+RoboApi::TimedObject::~TimedObject()
+{
+	if (!isStopped())
+		stop();
+}
+
 void RoboApi::TimedObject::start()
 {
 	RoboApi::TimedObjectManager::instance()->add(this);

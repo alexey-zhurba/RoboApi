@@ -3,6 +3,7 @@
 // 
 
 #include "TimedObjectManager.h"
+#include "Debug.h"
 
 RoboApi::TimedObjectManager* RoboApi::TimedObjectManager::instance()
 {
@@ -22,6 +23,10 @@ void RoboApi::TimedObjectManager::add(TimedObject* tObj)
 {
 	if(m_stackPtr < COUNT_OF(m_tObjectStack))
 		m_tObjectStack[m_stackPtr++] = tObj;
+	DEBUG_PRINT("Added TimedObject ");
+	DEBUG_PRINT((__uintptr_t)tObj);
+	DEBUG_PRINT(" @ index ");
+	DEBUG_PRINTLN(m_stackPtr - 1);
 }
 
 void RoboApi::TimedObjectManager::remove(TimedObject* tObj)
@@ -30,6 +35,10 @@ void RoboApi::TimedObjectManager::remove(TimedObject* tObj)
 	{
 		if (m_tObjectStack[i] == tObj)
 		{
+			DEBUG_PRINT("Removing TimedObject ");
+			DEBUG_PRINT((__uintptr_t)tObj);
+			DEBUG_PRINT(" @ index ");
+			DEBUG_PRINTLN(i);
 			--m_stackPtr;
 			for (int j = i; j < m_stackPtr; ++j)
 			{
@@ -37,4 +46,11 @@ void RoboApi::TimedObjectManager::remove(TimedObject* tObj)
 			}
 		}
 	}
+	DEBUG_PRINTLN("New Stack: ");
+	for (int i = 0; i < m_stackPtr; ++i)
+	{
+		DEBUG_PRINT((__uintptr_t)m_tObjectStack[i]);
+		DEBUG_PRINT(" | ");
+	}
+	DEBUG_PRINTLN();
 }

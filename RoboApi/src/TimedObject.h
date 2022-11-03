@@ -21,7 +21,7 @@ namespace RoboApi {
 		TimedObject();
 		//Wird in jedem arduino loop aufgerufen
 		virtual void update() = 0;
-		virtual ~TimedObject() = default;
+		virtual ~TimedObject();
 		virtual void start();
 		virtual void stop();
 		bool isStopped();

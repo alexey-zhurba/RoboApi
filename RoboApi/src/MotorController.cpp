@@ -56,8 +56,10 @@ void RoboApi::MotorController::stop()
 	TimedObject::stop();
 	m_bRueck = false;
 	m_bVor = false;
-	digitalWrite(m_pinIA, LOW);
-	digitalWrite(m_pinIB, LOW);
+	digitalWrite(m_pinIA, HIGH);
+	digitalWrite(m_pinIB, HIGH);
+	DEBUG_PRINTLN(m_pinIA);
+	DEBUG_PRINTLN(m_pinIB);
 	PRINT_EXIT_FUNC();
 }
 
