@@ -75,36 +75,42 @@ void RoboApi::MotorController::update()
 		int speedAdd = MAX(c - (int)((c * m_tmrVor.elapsedMillis()) / m_accelaration), 0);*/
 		if (!m_bImpulseVor)
 		{
-			m_tmrImpulseVor.start();
+			//	m_tmrImpulseVor.start();
 			m_bImpulseVor = true;
+			vorwaertsInternal(120);
+			delay(0);
 		}
-		if (m_tmrImpulseVor.elapsedMillis() < m_accelaration) 
-		{
-			vorwaertsInternal(140);
-		}
-		else
-		{
-			vorwaertsInternal(m_speedVor); //nach m_accelaration + 1 max speed
-		}
+		//if (m_tmrImpulseVor.elapsedMillis() < m_accelaration) 
+		//{
+		//	vorwaertsInternal(140);
+		//}
+		//else
+		//{
+		//	vorwaertsInternal(m_speedVor); //nach m_accelaration + 1 max speed
+		//}
+		vorwaertsInternal(m_speedVor);
 	}
-	else if(m_bRueck && (!m_dauerRueck || m_tmrRueck.elapsedMillis() < m_dauerRueck))
+	else if (m_bRueck && (!m_dauerRueck || m_tmrRueck.elapsedMillis() < m_dauerRueck))
 	{
 		/*int c = 255 - m_speedRueck;
 		int speedAdd = MAX(c - (int)((c * m_tmrRueck.elapsedMillis()) / m_accelaration), 0);
 		rueckwaertsInternal(m_speedRueck + speedAdd);*/
 		if (!m_bImpulseRueck)
 		{
-			m_tmrImpulseRueck.start();
+			//	m_tmrImpulseRueck.start();
 			m_bImpulseRueck = true;
+			rueckwaertsInternal(120);
+			delay(0);
 		}
-		if (m_tmrImpulseRueck.elapsedMillis() < m_accelaration)
-		{
-			rueckwaertsInternal(150);
-		}
-		else
-		{
-			rueckwaertsInternal(m_speedRueck); //nach m_accelaration + 1 max speed
-		}
+		//if (m_tmrImpulseRueck.elapsedMillis() < m_accelaration)
+		//{
+		//	rueckwaertsInternal(140);
+		//}
+		//else
+		//{
+		//	rueckwaertsInternal(m_speedRueck); //nach m_accelaration + 1 max speed
+		//}
+		rueckwaertsInternal(m_speedRueck);
 	}
 	else
 	{
