@@ -77,8 +77,8 @@ void RoboApi::MotorController::update()
 		{
 			//	m_tmrImpulseVor.start();
 			m_bImpulseVor = true;
-			vorwaertsInternal(180);
-			delay(15);
+			vorwaertsInternal(255);
+			delay(10);
 		}
 		//if (m_tmrImpulseVor.elapsedMillis() < m_accelaration) 
 		//{
