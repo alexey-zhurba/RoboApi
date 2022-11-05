@@ -27,6 +27,10 @@ namespace RoboApi {
 		bool m_bVor;
 		bool m_bRueck;
 		int m_accelaration;
+		bool m_bImpulseVor;
+		bool m_bImpulseRueck;
+		Timer m_tmrImpulseVor;
+		Timer m_tmrImpulseRueck;
 		void vorwaertsInternal(int speed);
 		void rueckwaertsInternal(int speed);
 	public:

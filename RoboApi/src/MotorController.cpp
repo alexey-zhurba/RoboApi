@@ -35,6 +35,7 @@ void RoboApi::MotorController::vorwaerts(int speed, int dauer)
 	m_dauerVor = dauer;
 	m_bVor = true;
 	m_bRueck = false;
+	m_bImpulseVor = false;
 	m_tmrVor.start();
 	start();
 	PRINT_EXIT_FUNC();
@@ -47,6 +48,7 @@ void RoboApi::MotorController::rueckwaerts(int speed, int dauer)
 	m_tmrRueck.start();
 	m_bRueck = true;
 	m_bVor = false;
+	m_bImpulseRueck = false;
 	start();
 }
 
@@ -71,7 +73,12 @@ void RoboApi::MotorController::update()
 	{
 		/*int c = 255 - m_speedVor;
 		int speedAdd = MAX(c - (int)((c * m_tmrVor.elapsedMillis()) / m_accelaration), 0);*/
-		if (m_tmrVor.elapsedMillis() < m_accelaration)
+		if (!m_bImpulseVor)
+		{
+			m_tmrImpulseVor.start();
+			m_bImpulseVor = true;
+		}
+		if (m_tmrImpulseVor.elapsedMillis() < m_accelaration) 
 		{
 			vorwaertsInternal(255);
 		}
@@ -85,7 +92,12 @@ void RoboApi::MotorController::update()
 		/*int c = 255 - m_speedRueck;
 		int speedAdd = MAX(c - (int)((c * m_tmrRueck.elapsedMillis()) / m_accelaration), 0);
 		rueckwaertsInternal(m_speedRueck + speedAdd);*/
-		if (m_tmrRueck.elapsedMillis() < m_accelaration)
+		if (!m_bImpulseRueck)
+		{
+			m_tmrImpulseRueck.start();
+			m_bImpulseRueck = true;
+		}
+		if (m_tmrImpulseRueck.elapsedMillis() < m_accelaration)
 		{
 			rueckwaertsInternal(255);
 		}
