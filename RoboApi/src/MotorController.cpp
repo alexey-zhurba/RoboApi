@@ -6,7 +6,7 @@ void RoboApi::MotorController::vorwaertsInternal(int speed)
 	PRINT_ENTER_FUNC();
 	Serial.print("Speed: ");
 	Serial.println(speed);
-	digitalWrite(m_pinIA, LOW);
+	analogWrite(m_pinIA, 0);
 	analogWrite(m_pinIB, speed);
 	PRINT_EXIT_FUNC();
 }
@@ -14,7 +14,7 @@ void RoboApi::MotorController::vorwaertsInternal(int speed)
 void RoboApi::MotorController::rueckwaertsInternal(int speed)
 {
 	analogWrite(m_pinIA, speed);
-	digitalWrite(m_pinIB, LOW);
+	analogWrite(m_pinIB, 0); //writing analog and digital to same pin causes problems
 }
 
 RoboApi::MotorController::MotorController(int pinIA, int pinIB) : m_pinIA(pinIA), m_pinIB(pinIB), m_bVor(false), m_bRueck(false)
@@ -56,8 +56,8 @@ void RoboApi::MotorController::stop()
 	TimedObject::stop();
 	m_bRueck = false;
 	m_bVor = false;
-	digitalWrite(m_pinIA, HIGH);
-	digitalWrite(m_pinIB, HIGH);
+	analogWrite(m_pinIA, 255);
+	analogWrite(m_pinIB, 255);
 	DEBUG_PRINTLN(m_pinIA);
 	DEBUG_PRINTLN(m_pinIB);
 	PRINT_EXIT_FUNC();

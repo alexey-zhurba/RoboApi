@@ -10,11 +10,11 @@
 
 
 
-RoboApi::MotorGroup motor(RoboApi::MotorController(19,18),RoboApi::MotorController(3,2));
+RoboApi::MotorGroup motor(RoboApi::MotorController(2,3),RoboApi::MotorController(18,19));
 RoboApi::IRSensor sensor(A0);
 void setup() {
 Serial.begin(9600);
-motor.vorwaerts(255,2000);
+motor.vorwaerts(120,2000);
 
 }
 
