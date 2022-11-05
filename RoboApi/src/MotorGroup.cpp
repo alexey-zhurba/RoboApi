@@ -20,14 +20,14 @@ void RoboApi::MotorGroup::rueckwaerts(int speed, int dauer)
 
 void RoboApi::MotorGroup::links(int speed, int dauer)
 {
-	m_mtrCntrlLeft.rueckwaerts(speed, dauer);
+	//m_mtrCntrlLeft.rueckwaerts(speed, dauer);
 	m_mtrCntrlRight.vorwaerts(speed, dauer);
 }
 
 void RoboApi::MotorGroup::rechts(int speed, int dauer)
 {
 	m_mtrCntrlLeft.vorwaerts(speed, dauer);
-	m_mtrCntrlRight.rueckwaerts(speed, dauer);
+	//m_mtrCntrlRight.rueckwaerts(speed, dauer);
 }
 
 void RoboApi::MotorGroup::stop()
