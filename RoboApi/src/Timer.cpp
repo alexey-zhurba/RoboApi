@@ -8,6 +8,7 @@ Timer::Timer() : m_startTime(0), m_stopTime(0) {};
 
 void Timer::start()
 {
+	reset();
 	m_startTime = millis();
 }
 

@@ -14,7 +14,7 @@ RoboApi::MotorGroup motor(RoboApi::MotorController(2,3),RoboApi::MotorController
 RoboApi::IRSensor sensor(A0);
 void setup() {
 Serial.begin(9600);
-motor.vorwaerts(120,2000);
+motor.rechts(100,2000);
 
 }
 
