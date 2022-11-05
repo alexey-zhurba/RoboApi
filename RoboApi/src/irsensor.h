@@ -8,7 +8,7 @@
 #include "WProgram.h"
 #endif
 
-#define IR_THRESHOLD 20
+#define IR_THRESHOLD 40
 
 namespace RoboApi {
 	class IRSensor {
