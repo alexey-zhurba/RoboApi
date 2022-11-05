@@ -17,7 +17,7 @@ void RoboApi::MotorController::rueckwaertsInternal(int speed)
 	analogWrite(m_pinIB, 0); //writing analog and digital to same pin causes problems
 }
 
-RoboApi::MotorController::MotorController(int pinIA, int pinIB) : m_pinIA(pinIA), m_pinIB(pinIB), m_bVor(false), m_bRueck(false), m_accelaration(3)
+RoboApi::MotorController::MotorController(int pinIA, int pinIB) : m_pinIA(pinIA), m_pinIB(pinIB), m_bVor(false), m_bRueck(false), m_accelaration(1)
 {
 	pinMode(pinIA, OUTPUT);
 	pinMode(pinIB, OUTPUT);
@@ -80,7 +80,7 @@ void RoboApi::MotorController::update()
 		}
 		if (m_tmrImpulseVor.elapsedMillis() < m_accelaration) 
 		{
-			vorwaertsInternal(255);
+			vorwaertsInternal(180);
 		}
 		else
 		{
@@ -99,7 +99,7 @@ void RoboApi::MotorController::update()
 		}
 		if (m_tmrImpulseRueck.elapsedMillis() < m_accelaration)
 		{
-			rueckwaertsInternal(255);
+			rueckwaertsInternal(180);
 		}
 		else
 		{
