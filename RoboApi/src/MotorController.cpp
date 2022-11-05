@@ -77,7 +77,7 @@ void RoboApi::MotorController::update()
 		{
 			//	m_tmrImpulseVor.start();
 			m_bImpulseVor = true;
-			vorwaertsInternal(140);
+			vorwaertsInternal(150);
 			delay(0);
 		}
 		//if (m_tmrImpulseVor.elapsedMillis() < m_accelaration) 
@@ -99,7 +99,7 @@ void RoboApi::MotorController::update()
 		{
 			//	m_tmrImpulseRueck.start();
 			m_bImpulseRueck = true;
-			rueckwaertsInternal(140);
+			rueckwaertsInternal(150);
 			delay(0);
 		}
 		//if (m_tmrImpulseRueck.elapsedMillis() < m_accelaration)
